@@ -1,0 +1,9 @@
+1) Baixei Node
+2) npm install -g @ionic/cli                  PowerShell
+3) ionic start pokeapp blank --type=angular   PowerShell
+4) cd pokeapp
+5) npm.cmd i -D -E @angular/cli
+6) npm install -g @angular/cli@latest
+7) ionic serve (commit apos pegar)
+
+commit
