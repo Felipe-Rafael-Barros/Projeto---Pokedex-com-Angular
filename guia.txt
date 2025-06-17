@@ -7,3 +7,14 @@
 7) ionic serve (commit apos pegar)
 
 commit
+
+1) Criando a estrutura inicial das pastas
+
+- ionic generate page pages/home            Tela principal
+- ionic generate page pages/details         Tela de detalhes
+- ionic generate service services/poke-api  Serviço da API
+
+2) Instalando depedências úteis
+
+- npm install axios --save                   Para requisições HTTP
+- npm install @ionic/storage-angular --save  Para favoritos
