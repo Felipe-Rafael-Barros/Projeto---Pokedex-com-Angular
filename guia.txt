@@ -18,3 +18,8 @@ commit
 
 - npm install axios --save                   Para requisições HTTP
 - npm install @ionic/storage-angular --save  Para favoritos
+
+commit
+
+Service PokeAPI
+
