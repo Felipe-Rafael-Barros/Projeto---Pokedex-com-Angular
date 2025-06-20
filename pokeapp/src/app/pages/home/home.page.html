@@ -21,6 +21,14 @@
       <ion-item *ngFor="let pokemon of pokemons" 
       [routerLink]="['/details', pokemon.name]">
         <button detail>{{ pokemon.name | titlecase }}</button> <!-- Botão para entrar na página de detalhes-->
+        
+      <ion-avatar slot="start">
+        <ion-img
+         [src] = "getPokemonImage(pokemon.url)"
+          [alt] = "pokemon.name"
+          (ionError)="handleImageError($event)"
+          ></ion-img>
+      </ion-avatar>
 
       </ion-item>
 
