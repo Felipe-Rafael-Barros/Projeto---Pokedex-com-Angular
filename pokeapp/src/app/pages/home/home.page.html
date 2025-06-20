@@ -1,13 +1,31 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Pokedex
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">home</ion-title>
+      <ion-title size="large">Pokedex Atualizada</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="container">
+    
+    <ion-list>
+
+      <ion-item *ngFor="let pokemon of pokemons" 
+      [routerLink]="['/details', pokemon.name]">
+        <button detail>{{ pokemon.name | titlecase }}</button> <!-- Botão para entrar na página de detalhes-->
+
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+
 </ion-content>

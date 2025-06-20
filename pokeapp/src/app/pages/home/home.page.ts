@@ -1,20 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem } from '@ionic/angular/standalone';
+import { PokeApiService } from '../../services/poke-api.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [
+    IonHeader, 
+    IonToolbar, 
+    IonTitle, 
+    IonContent,
+    IonList,
+    IonItem, 
+    CommonModule,
+    RouterLink 
+  ],
 })
-export class HomePage implements OnInit {
+export class HomePage {
+  pokemons: any[] = [];
 
-  constructor() { }
+  constructor(private pokeApi: PokeApiService) {}
 
-  ngOnInit() {
+  async loadPokemons() {
+    this.pokemons = await this.pokeApi.getPokemonList();
   }
 
+  ionViewDidEnter() {
+    this.loadPokemons();
+  }
 }
